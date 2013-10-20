@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Chihwei Wu IS homework 5</title>
+</head>
+<body>
+    <p>Please click the button to enter the value in prompt box (value 5~20)</p>
+
+    <button onclick="timestable()">Click here</button>
+
+
+    <p id="tabledemo"></p>
+
+    <!---
+    <table align="center" border ="2">
+
+        --->
+
+    <script type="text/javascript">
+
+ 
+        document.writeln("<table>");
+
+        function timestable() {
+            var d;
+
+            var inpnum = prompt("Please enter the number here", "12");
+
+
+            document.write("<table border=1>") //set table border
+
+
+            if (5 < inpnum && inpnum < 20) {
+                /*---
+                d = inpnum;
+                document.getElementById("tabledemo").innerHTML = d;
+                */
+                
+
+                for (i = 1; i <= inpnum; i++) {
+                    document.write("<td>" + i);
+                    
+                    
+
+                    for (j = 1; j <= inpnum; j++) {
+                        
+                        document.write("<td>" + (i * j))
+                    }
+                    
+                    document.write("<tr>");
+                    
+                }
+                
+
+            }
+
+            else {
+                prompt("please enter a vaild number");
+            }
+        }
+
+        document.writeln("</table>");
+
+        </script>
+
+
+
+    <style type="text/css">
+        tr:first-Child {background-color: yellow;}
+        td:first-Child {background-color: yellow;}  
+        td { border:1px solid black; background-color: red;}
+
+        </style>
+
+
+</body>
+</html>
