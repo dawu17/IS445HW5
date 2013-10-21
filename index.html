@@ -4,12 +4,16 @@
     <title>Chihwei Wu IS homework 5</title>
 </head>
 <body>
+    <div id="intro">
     <p>Please click the button to enter the value in prompt box (value 5~20)</p>
 
     <button onclick="timestable()">Click here</button>
 
+    </div>
 
-    <p id="tabledemo"></p>
+
+
+    <div id="tabledemo">
 
     <!---
     <table align="center" border ="2">
@@ -18,51 +22,51 @@
 
     <script type="text/javascript">
 
- 
-        document.writeln("<table>");
 
         function timestable() {
             var d;
 
-            var inpnum = prompt("Please enter the number here", "12");
+            var inpnum = prompt("Please enter the number here", "12"); //get user input number
 
 
-            document.write("<table border=1>") //set table border
-
-
-            if (5 < inpnum && inpnum < 20) {
+            if (5 <= inpnum && inpnum <= 20) {
                 /*---
                 d = inpnum;
                 document.getElementById("tabledemo").innerHTML = d;
                 */
+
+                document.write("<table border=1>") //set table border
                 
 
-                for (i = 1; i <= inpnum; i++) {
-                    document.write("<td>" + i);
-                    
-                    
 
+                for (i = 1; i <= inpnum; i++) {
+                    document.write("<td>" + i + "</td>");
+                    document.write("<tr>");
+                 
+                   
                     for (j = 1; j <= inpnum; j++) {
                         
-                        document.write("<td>" + (i * j))
+                        document.write("<td>" + (i * j) + "</td>" )
+
                     }
                     
-                    document.write("<tr>");
+                    document.write("</tr>"); //next line
                     
                 }
                 
-
             }
 
+
+
             else {
-                prompt("please enter a vaild number");
+                alert("please enter a vaild number (5~20)");
             }
         }
 
         document.writeln("</table>");
 
         </script>
-
+        </div>
 
 
     <style type="text/css">
