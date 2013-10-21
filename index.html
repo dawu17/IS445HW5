@@ -36,12 +36,27 @@
                 */
 
 
-                document.write("<table border=1; align= center>") //set table border
+                document.write("<table border=1; align= center;>") //set table border
 
 
                 for (i = 1; i <= inpnum; i++) {
-                   document.write("<tr>");
-                   document.write("<td style= 'background-color:yellow'>" + i + "</td>");
+                    if (i==1) {
+                        document.write("<tr>"); 
+                        for (k = 0; k <= inpnum; k++) {
+                            if (k == 0) {
+                                //first line
+                                document.write("<td style='border: none'></td>"); //none for 0
+                            }
+                            else {
+                                document.write("<td style='border: none; background-color: yellow'>" + k + "</td>"); //first line with highlight
+                            }
+
+                        }
+                            document.write("</tr>");//line brake
+                    }
+                        document.write("<tr>");//new line for inner for loop
+                        document.write("<td style= 'background-color:yellow; border:none'>" + i + "</td>");//first left row
+
               
                    for (j = 1; j <= inpnum; j++) {
                        if (i == j) {
