@@ -11,17 +11,10 @@
 
     </div>
 
-
-
     <div id="tabledemo">
 
-    <!---
-    <table align="center" border ="2">
-
-        --->
 
     <script type="text/javascript">
-
 
         function timestable() {
             var d;
@@ -35,29 +28,34 @@
                 document.getElementById("tabledemo").innerHTML = d;
                 */
 
-                document.write("<table border=1>") //set table border
-                
+                /*document.write("<tr>");
+                for (k = 1; k <= inpnum; K++){
+                document.write("<td>" + k + "</td>");
+                }
+                document.write("</tr>");
+                */
+
+
+                document.write("<table border=1; align= center>") //set table border
 
 
                 for (i = 1; i <= inpnum; i++) {
-                    document.write("<tr>");
-                    document.write("<td>" + i + "</td>");
-                    
-                 
-                   
-                    for (j = 1; j <= inpnum; j++) {
-                        
-                        document.write("<td>" + (i * j) + "</td>" )
-
-                    }
-                    
-                    document.write("</tr>"); //next line
-                    
-                }
+                   document.write("<tr>");
+                   document.write("<td style= 'background-color:yellow'>" + i + "</td>");
+              
+                   for (j = 1; j <= inpnum; j++) {
+                       if (i == j) {
+                           
+                           document.write("<td style='background-color:yellow'>" + (i * j) + "</td>"); //set color for perfect square
+                       }
+                       else {
+                           document.write("<td>" + (i * j) + "</td>");
+                       }
+                   }
                 
+                    document.write("</tr>"); //next line   
+                }
             }
-
-
 
             else {
                 alert("please enter a vaild number (5~20)");
