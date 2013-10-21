@@ -2,30 +2,33 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Chihwei Wu IS homework 5</title>
+    <link href="StyleSheet.css" rel="stylesheet" />
 </head>
 <body>
     <div id="intro">
     <p>Please click the button to enter the value in prompt box (value 5~20)</p>
 
-    <button onclick="timestable()">Click here</button>
-
+         
     </div>
 
     <div id="tabledemo">
+        <button id="b-calltable" onclick="timestable();">Click here</button>
 
+
+    </div>
 
     <script type="text/javascript">
 
         function timestable() {
             var d;
-
+            var tableid = document.getElementById("tabledemo");
             var inpnum = prompt("Please enter the number here", "12"); //get user input number
 
 
             if (5 <= inpnum && inpnum <= 20) {
                 /*---
                 d = inpnum;
-                document.getElementById("tabledemo").innerHTML = d;
+                .innerHTML = d;
                 */
 
                 /*document.write("<tr>");
@@ -35,8 +38,8 @@
                 document.write("</tr>");
                 */
 
-
-                document.write("<table border=1; align= center;>") //set table border
+                
+                document.write("<table border=1; id='csstable' >") //set table border
 
 
                 for (i = 1; i <= inpnum; i++) {
@@ -73,22 +76,15 @@
             }
 
             else {
-                alert("please enter a vaild number (5~20)");
+                alert("the valid input is a number between 5 and 20, please refresh your page to start again");
             }
         }
 
         document.writeln("</table>");
-
+        
         </script>
-        </div>
 
 
-    <style type="text/css">
-        tr:first-Child {background-color: yellow;}
-        td:first-Child {background-color: yellow;}  
-        td { border:1px solid black; background-color: red;}
-
-        </style>
 
 
 </body>
